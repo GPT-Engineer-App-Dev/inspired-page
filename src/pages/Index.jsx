@@ -19,13 +19,13 @@ const Index = () => {
       <Box bg="rgba(0, 0, 0, 0.5)" w="100%" p={4}>
         <Flex maxW="container.lg" mx="auto" align="center">
           <HStack spacing={4}>
-            <Link href="#">new</Link>
-            <Link href="#">past</Link>
-            <Link href="#">comments</Link>
-            <Link href="#">ask</Link>
-            <Link href="#">show</Link>
-            <Link href="#">jobs</Link>
-            <Link href="#">submit</Link>
+            <Link href="#">New</Link>
+            <Link href="#">Past</Link>
+            <Link href="#">Comments</Link>
+            <Link href="#">Ask</Link>
+            <Link href="#">Show</Link>
+            <Link href="#">Jobs</Link>
+            <Link href="#">Submit</Link>
           </HStack>
           <Spacer />
           <Link href="#">login</Link>
