@@ -1,19 +1,41 @@
-// Update this page (the content is just a fallback if you fail and example)
-// Use chakra-ui
-import { Container, Text, VStack } from "@chakra-ui/react";
-
-// Example of using react-icons
-// import { FaRocket } from "react-icons/fa";
-// <IconButton aria-label="Add" icon={<FaRocket />} size="lg" />; // IconButton would also have to be imported from chakra
+import { Box, Container, Flex, HStack, Link, Spacer, Text, VStack } from "@chakra-ui/react";
 
 const Index = () => {
+  const items = [
+    { title: "Item 1", points: 100, author: "Author1", time: "1 hour ago", comments: 50 },
+    { title: "Item 2", points: 200, author: "Author2", time: "2 hours ago", comments: 30 },
+    { title: "Item 3", points: 300, author: "Author3", time: "3 hours ago", comments: 20 },
+    // Add more items as needed
+  ];
+
   return (
-    <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-      <VStack spacing={4}>
-        <Text fontSize="2xl">Your Blank Canvas</Text>
-        <Text>Chat with the agent to start making edits.</Text>
-      </VStack>
-    </Container>
+    <Box>
+      <Box bg="orange.500" w="100%" p={4} color="white">
+        <Flex maxW="container.lg" mx="auto" align="center">
+          <HStack spacing={4}>
+            <Link href="#">new</Link>
+            <Link href="#">past</Link>
+            <Link href="#">comments</Link>
+            <Link href="#">ask</Link>
+            <Link href="#">show</Link>
+            <Link href="#">jobs</Link>
+            <Link href="#">submit</Link>
+          </HStack>
+          <Spacer />
+          <Link href="#">login</Link>
+        </Flex>
+      </Box>
+      <Container maxW="container.lg" mt={4}>
+        <VStack spacing={4} align="stretch">
+          {items.map((item, index) => (
+            <Box key={index} p={4} borderWidth="1px" borderRadius="md">
+              <Text fontSize="xl" fontWeight="bold">{item.title}</Text>
+              <Text>{item.points} points by {item.author} {item.time} | {item.comments} comments</Text>
+            </Box>
+          ))}
+        </VStack>
+      </Container>
+    </Box>
   );
 };
 
