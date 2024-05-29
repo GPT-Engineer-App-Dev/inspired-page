@@ -1,4 +1,4 @@
-import { Box, Container, Flex, HStack, Link, Spacer, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Flex, HStack, Link, Spacer, Text, VStack, Image } from "@chakra-ui/react";
 
 const Index = () => {
   const items = [
@@ -9,8 +9,14 @@ const Index = () => {
   ];
 
   return (
-    <Box>
-      <Box bg="orange.500" w="100%" p={4} color="white">
+    <Box
+      bgImage="url('/images/stopwatch-background.jpg')"
+      bgSize="cover"
+      bgPosition="center"
+      minH="100vh"
+      color="white"
+    >
+      <Box bg="rgba(0, 0, 0, 0.5)" w="100%" p={4}>
         <Flex maxW="container.lg" mx="auto" align="center">
           <HStack spacing={4}>
             <Link href="#">new</Link>
@@ -28,7 +34,7 @@ const Index = () => {
       <Container maxW="container.lg" mt={4}>
         <VStack spacing={4} align="stretch">
           {items.map((item, index) => (
-            <Box key={index} p={4} borderWidth="1px" borderRadius="md">
+            <Box key={index} p={4} borderWidth="1px" borderRadius="md" bg="rgba(255, 255, 255, 0.8)" color="black">
               <Text fontSize="xl" fontWeight="bold">{item.title}</Text>
               <Text>{item.points} points by {item.author} {item.time} | {item.comments} comments</Text>
             </Box>
